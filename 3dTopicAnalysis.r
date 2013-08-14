@@ -1,5 +1,7 @@
+#remove all items
 rm(list=ls(all=TRUE))
 #set wd
+#load packages
 library("rJava")
 library("rWeka")
 library("rWekajars")
@@ -99,5 +101,6 @@ tdmjul8.m <- as.matrix(tdmjul8, row.names=TRUE)
 v1<- sort(rowSums(tdmjul8.m),decreasing=TRUE)
 summary(v1)       
 write.csv(v1, "jul8FreqTerms.csv", row.names=TRUE) 
+#examine cluster
 hjul8 <- hclust(dist(tdmjul8), method="ward")       
       
