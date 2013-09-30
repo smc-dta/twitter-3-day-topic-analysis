@@ -28,7 +28,7 @@ is.na(jul8hash.df$word)
 jul8hash.df[!complete.cases(jul8hash.df), 1 ]
 jul8hash.df <- jul8hash.df[jul8hash.df$word != 0, ]
 
-#Add up number of instances by work, arrange in decending order
+#Add up number of instances by word, arrange in decending order
 #load plyr
 jul8hashTtl.df <- ddply(jul8hash.df , "word", summarise, total = sum(n) )
 jul8hashTtl.df <- arrange(jul8hashTtl.df, desc(total))
@@ -104,3 +104,5 @@ write.csv(v1, "jul8FreqTerms.csv", row.names=TRUE)
 #examine cluster
 hjul8 <- hclust(dist(tdmjul8), method="ward")       
       
+#wordcloud
+
